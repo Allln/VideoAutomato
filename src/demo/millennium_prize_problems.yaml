@@ -1,0 +1,48 @@
+title: Millennium Prize Problems
+
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  output: output/millennium_prize_problems.mp4
+  background_color: "#07111F"
+
+audio:
+  tts:
+    enabled: true
+    provider: windows_sapi
+    rate: 0
+    volume: 100
+
+  music:
+    path: ../assets/music/1.mp3
+    volume: 0.12
+    fade_in: 2
+    fade_out: 3
+    loop: true
+scenes:
+  - id: seven-problems
+    title: Seven Mathematical Mountains
+    body: >
+      In 2000, the Clay Mathematics Institute named seven deep unsolved
+      questions the Millennium Prize Problems. Each carries a one-million-dollar
+      reward, and each sits at the frontier of modern mathematics.
+    image: ../images/01_seven_problems.png
+    duration: 8
+    voiceover: >
+      In two thousand, the Clay Mathematics Institute announced seven unsolved
+      mathematical challenges now known as the Millennium Prize Problems.
+
+  - id: clay-institute
+    title: A Prize for Lasting Insight
+    body: >
+      The list includes the Riemann Hypothesis, P versus NP, Navier-Stokes,
+      Yang-Mills, Birch and Swinnerton-Dyer, Hodge, and the Poincare Conjecture,
+      which has since been solved. This demo shows how a YAML script becomes a
+      clean, slide-style explainer video.
+    image: ../images/02_clay_institute.png
+    duration: 10
+    voiceover: >
+      These problems span number theory, geometry, computation, and physics.
+      One of them, the Poincare Conjecture, has been solved, while the rest
+      continue to challenge the world.
