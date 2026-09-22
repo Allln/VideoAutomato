@@ -1,0 +1,91 @@
+title: Seven Problems. One Solved.
+
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  output: ../../output/2026-09-22-millennium-prize-problems.mp4
+  background_color: "#07111F"
+
+audio:
+  tts:
+    enabled: true
+    provider: windows_sapi
+    voice: null
+    rate: 0
+    volume: 100
+    pause_between_scenes: 1.5
+  music:
+    path: ../../src/assets/music/1.mp3
+    volume: 0.12
+
+scenes:
+  - id: scene-01
+    title: Seven Problems
+    body: >
+      Seven mathematical problems. A $7 million prize fund.
+    image: images/01_seven_problems.png
+    duration: 9
+    voiceover: >
+      In the year 2000, the Clay Mathematics Institute announced seven
+      exceptionally difficult mathematical problems, with a prize of one
+      million US dollars for each complete solution.
+
+  - id: scene-02
+    title: The Prize Challenge
+    body: >
+      One million dollars for each problem.
+    image: images/02_clay_institute.png
+    duration: 9
+    voiceover: >
+      The problems were chosen to represent major challenges across modern
+      mathematics. The prize was intended to encourage breakthroughs and
+      recognize solutions that meet the Institute's published standards.
+
+  - id: scene-03
+    title: What Makes Them Hard
+    body: >
+      Deep questions across different areas of mathematics.
+    image: images/03_seven_problems.png
+    duration: 11
+    voiceover: >
+      The seven problems concern areas including number theory, geometry,
+      physics, computer science, and mathematical foundations. They are not
+      variations of one question, but separate problems with very different
+      mathematical structures.
+
+  - id: scene-04
+    title: One Has Been Solved
+    body: >
+      The Poincare Conjecture was resolved.
+    image: images/04_human.png
+    duration: 11
+    voiceover: >
+      As of the source material, only one of the seven Millennium Prize
+      Problems has been officially resolved: the Poincare Conjecture,
+      proved by Grigori Perelman. The other six remain open, so their
+      million-dollar prizes have not been awarded for completed solutions.
+
+  - id: scene-05
+    title: Six Remain Open
+    body: >
+      Six problems remain unresolved.
+    image: images/03_seven_problems.png
+    duration: 10
+    voiceover: >
+      The remaining problems are still active areas of mathematical research.
+      Their unresolved status should not be confused with a lack of progress:
+      researchers have developed many partial results, but no complete
+      accepted solution has resolved those six problems.
+
+  - id: scene-06
+    title: An Open Challenge
+    body: >
+      Seven problems. One official solution. Six open questions.
+    image: images/04_human.png
+    duration: 9
+    voiceover: >
+      The Millennium Prize Problems remain a striking example of how some
+      questions can resist generations of mathematical effort. One problem
+      has been resolved, while six continue to challenge mathematicians
+      around the world.
