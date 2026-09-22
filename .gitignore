@@ -32,6 +32,10 @@ projects/*/output/
 projects/*/preview_*.png
 projects/*/*.mp4
 
+# Audio files
+*.mp3
+*.wav
+
 # Temporary and backup files
 *.tmp
 *.temp
