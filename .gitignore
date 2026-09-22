@@ -1,0 +1,45 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDE and editor metadata
+.idea/
+.vscode/
+*.iml
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# Generated video-rendering files
+build/
+work/
+output/
+generated_audio/
+src/demo/build/
+src/demo/preview_*.png
+src/demo/*.mp4
+projects/*/build/
+projects/*/work/
+projects/*/output/
+projects/*/preview_*.png
+projects/*/*.mp4
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
