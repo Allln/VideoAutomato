@@ -1,0 +1,52 @@
+title: Birch and Swinnerton-Dyer Conjecture Explained
+
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  output: ../../output/1.mp4
+  background_color: "#07111F"
+
+audio:
+  tts:
+    enabled: true
+    provider: windows_sapi
+    voice: null
+    rate: 0
+    volume: 100
+  music:
+    path: ../../src/assets/music/1.mp3
+    volume: 0.12
+  pause_between_scenes: 1.0
+  auto_duration_padding: 0.5
+
+scenes:
+  - id: scene-01
+    title: A surprising connection
+    body: >
+      A simple-looking curve can hide a surprisingly difficult question:
+      does it have only a few rational points, or infinitely many?
+    image: images/1.png
+    duration: auto
+    voiceover: >
+      The Birch and Swinnerton-Dyer conjecture starts with elliptic curves,
+      special shapes studied in number theory. We can look for points on
+      these curves whose coordinates are rational numbers. The key question
+      is whether there are only finitely many such points, or infinitely many.
+
+  - id: scene-02
+    title: The mystery is still open
+    body: >
+      The conjecture predicts that a hidden numerical signal reveals how
+      many independent rational points the curve has.
+    image: images/2.png
+    duration: auto
+    voiceover: >
+      Here is the surprising part. Mathematicians found a different way to
+      study the same curve, using a special function built from its behavior
+      modulo prime numbers. The conjecture says that this signal should
+      reveal the curve's rank, which measures how many independent points
+      generate infinitely many others. Many special cases are known, and
+      there is strong numerical evidence, but the full conjecture is still
+      unproved. That is why it remains one of the famous Millennium Prize
+      Problems.

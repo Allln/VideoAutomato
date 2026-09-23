@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
-from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageColor, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from .models import Project, Scene
 
@@ -24,38 +24,17 @@ def render_scene_frame(project: Project, scene: Scene, destination: Path) -> Pat
         (project.video.width, project.video.height),
         ImageColor.getrgb(project.video.background_color),
     )
-    draw = ImageDraw.Draw(canvas)
-
-    image_region = (96, 150, 980, 820)
     with Image.open(scene.image) as source_image:
-        prepared = ImageOps.contain(source_image.convert("RGBA"), (image_region[2], image_region[3]))
-        image_x = image_region[0] + (image_region[2] - prepared.width) // 2
-        image_y = image_region[1] + (image_region[3] - prepared.height) // 2
-        frame = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-        frame.paste(prepared, (image_x, image_y), prepared)
-        canvas.alpha_composite(frame)
+        source = source_image.convert("RGBA")
+        full_size = canvas.size
+        background = ImageOps.fit(source, full_size, method=Image.Resampling.LANCZOS)
+        background = background.filter(ImageFilter.GaussianBlur(radius=18))
+        canvas.alpha_composite(background)
 
-    draw.rounded_rectangle((1000, 130, 1820, 900), radius=36, fill=(10, 18, 30, 215))
-    draw.rounded_rectangle((72, 72, 1848, 1008), radius=42, outline=(255, 255, 255, 48), width=3)
-
-    title_font = _load_font(54, bold=True)
-    body_font = _load_font(30)
-    meta_font = _load_font(24)
-    accent_font = _load_font(28, bold=True)
-
-    draw.text((1040, 170), scene.title, font=title_font, fill=(245, 248, 255))
-    title_bar_bottom = 258
-    draw.rounded_rectangle((1040, title_bar_bottom, 1330, title_bar_bottom + 10), radius=5, fill=(110, 177, 255, 255))
-
-    text_top = 310
-    for line in _wrap_text(draw, scene.body, body_font, max_width=730):
-        draw.text((1040, text_top), line, font=body_font, fill=(224, 229, 240))
-        text_top += 46
-
-    footer_y = 940
-    draw.text((96, footer_y), project.title, font=accent_font, fill=(187, 205, 243))
-    duration_label = f"{scene.duration:.1f}s" if scene.duration is not None else "auto"
-    draw.text((1600, footer_y), duration_label, font=meta_font, fill=(187, 205, 243))
+        prepared = ImageOps.contain(source, full_size, method=Image.Resampling.LANCZOS)
+        image_x = (canvas.width - prepared.width) // 2
+        image_y = (canvas.height - prepared.height) // 2
+        canvas.alpha_composite(prepared, (image_x, image_y))
 
     canvas.convert("RGB").save(destination)
     return destination

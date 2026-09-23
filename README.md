@@ -105,11 +105,11 @@ Run commands from the repository root:
 ```powershell
 $env:PYTHONPATH = "src"
 
-python -m vidmaker validate projects\0\project.yaml
+python -m vidmaker validate projects\1\project.yaml
 
-python -m vidmaker render projects\0\project.yaml `
-  --output output\project-0.mp4 `
-  --work-dir work\project-0
+python -m vidmaker render projects\1\project.yaml `
+  --output output\project-1.mp4 `
+  --work-dir work\project-1
 ```
 
 To preview one scene without encoding a video:

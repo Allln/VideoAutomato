@@ -3,12 +3,12 @@
 You are generating a YAML project file for a local Python slide-video renderer.
 
 ## Source material
-list of images = [01_seven_problems.png, 02_clay_institute.png, 03_seven_problems.png, 04_human.png]
+list of images = [1.png, 2.png]
 ```text
 SOURCE:
-https://en.wikipedia.org/wiki/Millennium_Prize_Problems
+https://en.wikipedia.org/wiki/Birch_and_Swinnerton-Dyer_conjecture
 ```
-directory_name = 2026-09-22-millennium-prize-problems
+directory_name = 1
 
 ## Task
 
@@ -48,7 +48,7 @@ scenes:
     title: Scene title
     body: >
       Scene text.
-    image: images/01_image.png
+    image: images/1.png
     duration: auto
     voiceover: >
       Scene narration.
@@ -57,7 +57,7 @@ scenes:
     title: Scene title
     body: >
       Scene text.
-    image: images/02_image.png
+    image: images/2.png
     duration: auto
     voiceover: >
       Scene narration.
